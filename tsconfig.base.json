@@ -11,16 +11,15 @@
     "skipLibCheck": true,
     "declaration": true,
     "sourceMap": true,
-    "baseUrl": ".",
     "paths": {
       "@marketverse/core": [
-        "packages/core/src"
+        "./packages/core/src"
       ],
       "@marketverse/engine": [
-        "packages/engine/src"
+        "./packages/engine/src"
       ],
       "@marketverse/shared": [
-        "packages/shared/src"
+        "./packages/shared/src"
       ]
     }
   }
