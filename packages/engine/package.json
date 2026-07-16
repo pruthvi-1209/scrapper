@@ -1,0 +1,16 @@
+{
+  "name": "@marketverse/engine",
+  "private": true,
+  "version": "0.1.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "dependencies": {
+    "@marketverse/core": "*"
+  },
+  "scripts": {
+    "build": "tsc -b",
+    "clean": "rm -rf dist",
+    "test": "echo \"No tests yet\"",
+    "lint": "echo \"No lint yet\""
+  }
+}

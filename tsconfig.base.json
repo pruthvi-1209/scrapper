@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "lib": ["ES2022", "DOM"],
+    "strict": true,
+    "moduleResolution": "Bundler",
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "declaration": true,
+    "sourceMap": true,
+    "baseUrl": ".",
+    "paths": {
+      "@marketverse/core": [
+        "packages/core/src"
+      ],
+      "@marketverse/engine": [
+        "packages/engine/src"
+      ],
+      "@marketverse/shared": [
+        "packages/shared/src"
+      ]
+    }
+  }
+}
