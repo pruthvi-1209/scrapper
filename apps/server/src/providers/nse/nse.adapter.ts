@@ -1,8 +1,8 @@
-import type { Ticker } from "@marketverse/core";
+import type { Ticker, Quote } from "@marketverse/core";
 
-import { SEARCH } from "./constants/nse-endpoints";
-import { NSEClientError } from "./errors/NSEClientError";
-import { NSEClient } from "./nse.client";
+import { QUOTE_EQUITY, SEARCH } from "./constants/nse-endpoints.js";
+import { NSEClientError } from "./errors/NSEClientError.js";
+import { NSEClient } from "./nse.client.js";
 
 interface NseSearchResponseShape {
   data?: unknown;
@@ -101,4 +101,22 @@ export class NSEAdapter {
 
     return undefined;
   }
+
+  public async getQuote(symbol: string): Promise<Quote> {
+  const endpoint = `${QUOTE_EQUITY}?symbol=${encodeURIComponent(symbol)}`;
+
+  const response = await this.client.get<any>(endpoint);
+
+  return {
+    symbol: response.info.symbol,
+    companyName: response.info.companyName,
+    price: response.priceInfo.lastPrice,
+    previousClose: response.priceInfo.previousClose,
+    change: response.priceInfo.change,
+    changePercent: response.priceInfo.pChange,
+    open: response.priceInfo.open,
+    high: response.priceInfo.intraDayHighLow.max,
+    low: response.priceInfo.intraDayHighLow.min,
+  };
+}
 }

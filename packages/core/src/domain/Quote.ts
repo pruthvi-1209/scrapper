@@ -1,7 +1,11 @@
 export interface Quote {
   symbol: string;
+  companyName: string;
   price: number;
+  previousClose: number;
   change: number;
   changePercent: number;
-  timestamp: Date;
+  open: number;
+  high: number;
+  low: number;
 }

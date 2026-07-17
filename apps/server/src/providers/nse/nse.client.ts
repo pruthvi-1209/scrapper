@@ -1,8 +1,8 @@
 import axios, { AxiosResponse, type AxiosError, type AxiosInstance, type AxiosRequestConfig, type InternalAxiosRequestConfig } from "axios";
 
-import { BASE_URL, DEFAULT_HEADERS, DEFAULT_TIMEOUT_MS } from "../../config/nse.config";
-import { HOME } from "./constants/nse-endpoints";
-import { NSEClientError } from "./errors/NSEClientError";
+import { BASE_URL, DEFAULT_HEADERS, DEFAULT_TIMEOUT_MS } from "../../config/nse.config.js";
+import { HOME } from "./constants/nse-endpoints.js";
+import { NSEClientError } from "./errors/NSEClientError.js";
 
 export class NSEClient {
   private readonly client: AxiosInstance;

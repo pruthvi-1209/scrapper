@@ -8,11 +8,11 @@
     "packages/*"
   ],
   "scripts": {
-    "build": "yarn workspaces run build",
-    "dev": "concurrently \"yarn workspace @marketverse/api dev\" \"yarn workspace @marketverse/web dev\"",
-    "clean": "yarn workspaces run clean",
-    "lint": "yarn workspaces run lint",
-    "test": "yarn workspaces run test"
+    "build": "yarn workspaces foreach -A run build",
+    "clean": "yarn workspaces foreach -A run clean",
+    "lint": "yarn workspaces foreach -A run lint",
+    "test": "yarn workspaces foreach -A run test",
+    "dev": "concurrently \"yarn workspace @marketverse/server dev\" \"yarn workspace @marketverse/web dev\""
   },
   "devDependencies": {
     "@types/node": "^26.1.1",
